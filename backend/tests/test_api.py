@@ -50,7 +50,7 @@ def test_approval_and_resume(client):
     )
     assert response.status_code == 200
     assert response.json()["status"] == "completed"
-    assert response.json()["human_decision"] == "approve"
+    assert response.json()["human_decision"] == "approved"
 
 
 def test_state_endpoint(client):

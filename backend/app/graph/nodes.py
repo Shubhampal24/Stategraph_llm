@@ -108,9 +108,11 @@ def human_approval(state: ConversationState):
         }
     )
 
-    normalized = str(decision).strip().lower()
-    if normalized not in {"approve", "reject"}:
-        normalized = "reject"
+    decision_str = str(decision).strip().lower()
+    if decision_str == "approve":
+        normalized = "approved"
+    else:
+        normalized = "rejected"
 
     return {
         "human_decision": normalized,

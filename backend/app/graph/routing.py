@@ -12,7 +12,7 @@ def route_after_intent(state: ConversationState) -> str:
 
 
 def route_after_approval(state: ConversationState) -> str:
-    if state.get("human_decision") == "approve":
+    if state.get("human_decision") == "approved":
         return "approved_response"
 
     return "rejected_response"

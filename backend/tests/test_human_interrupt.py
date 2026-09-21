@@ -22,7 +22,7 @@ def test_human_approval_resume(service):
     resumed = service.resume(thread_id, "approve")
 
     assert resumed["status"] == "completed"
-    assert resumed["human_decision"] == "approve"
+    assert resumed["human_decision"] == "approved"
     assert "approved_response" in resumed["trace"]
 
 
@@ -38,5 +38,5 @@ def test_human_rejection_resume(service):
     resumed = service.resume(thread_id, "reject")
 
     assert resumed["status"] == "completed"
-    assert resumed["human_decision"] == "reject"
+    assert resumed["human_decision"] == "rejected"
     assert "rejected_response" in resumed["trace"]
