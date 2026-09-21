@@ -1,5 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.concurrency import run_in_threadpool
+import logging
+
+logger = logging.getLogger(__name__)
 
 from ..core.config import settings
 from ..schemas.conversation import ChatRequest, ChatResponse, ResumeRequest
@@ -72,6 +75,7 @@ async def chat(payload: ChatRequest, service: ConversationService = Depends(get_
             
         return result
     except Exception as exc:
+        logger.exception("POST /api/chat failed")
         raise HTTPException(
             status_code=500,
             detail={
@@ -111,6 +115,7 @@ async def resume(
             
         return result
     except Exception as exc:
+        logger.exception("POST /api/resume failed")
         raise HTTPException(
             status_code=500,
             detail={
