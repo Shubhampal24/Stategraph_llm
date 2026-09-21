@@ -1,0 +1,19 @@
+{
+  "examples": [
+    {
+      "message": "Explain Python functions.",
+      "expected_intent": "general",
+      "expected_node": "general_response"
+    },
+    {
+      "message": "Do it",
+      "expected_intent": "clarification",
+      "expected_node": "clarification"
+    },
+    {
+      "message": "Please approve this action.",
+      "expected_intent": "approval",
+      "expected_node": "human_approval"
+    }
+  ]
+}

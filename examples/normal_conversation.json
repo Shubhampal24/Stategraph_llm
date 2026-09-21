@@ -1,0 +1,9 @@
+{
+  "thread_id": "demo-normal",
+  "message": "Explain what a Python function is.",
+  "expected_route": [
+    "receive_message",
+    "analyze_intent",
+    "general_response"
+  ]
+}

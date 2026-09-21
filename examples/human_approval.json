@@ -1,0 +1,8 @@
+{
+  "thread_id": "demo-approval",
+  "message": "Please approve this action.",
+  "interrupt": {
+    "type": "human_approval",
+    "allowed_decisions": ["approve", "reject"]
+  }
+}
